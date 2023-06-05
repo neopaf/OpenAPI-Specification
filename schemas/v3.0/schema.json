@@ -895,6 +895,9 @@
         "description": {
           "type": "string"
         },
+        "x-status": {
+          "$ref": "#/definitions/X-Status"
+        },
         "externalDocs": {
           "$ref": "#/definitions/ExternalDocumentation"
         },

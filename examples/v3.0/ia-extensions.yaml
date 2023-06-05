@@ -33,7 +33,7 @@ paths:
     get:
       operationId: method1 #name
       description: Метод получения ....
-      x-status: Статус внедрения
+      x-status: Implemented
       parameters: []
       responses:
         default: {description: TODO}
