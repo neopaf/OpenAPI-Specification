@@ -43,6 +43,43 @@
     },
     "components": {
       "$ref": "#/definitions/Components"
+    },
+    "x-agreementVersion": {
+      "type": "string",
+      "description": "менять при изменении любых секций"
+    },
+    "x-namespace": {
+      "type": "string",
+      "description": "пространство имён для java классов"
+    },
+    "x-status": {
+      "$ref": "#/definitions/X-Status"
+    },
+    "x-interactionType": {
+      "type": "string",
+      "enum": ["API", "Message", "TODO_MORE"]
+    },
+    "x-consumptionType": {
+      "type": "string",
+      "enum": ["Sync", "Async", "TODO_MORE"]
+    },
+    "x-loadProfile": {
+      "type": "string",
+      "description": "Ссылка на профиль нагрузки"
+    },
+    "x-providers": {
+      "type": "array",
+      "description": "Какие системы предоставляют интерфейс",
+      "items": {
+        "$ref": "#/definitions/X-Actor"
+      }
+    },
+    "x-consumers": {
+      "type": "array",
+      "description": "Какие системы потребляют интерфейс",
+      "items": {
+        "$ref": "#/definitions/X-Actor"
+      }
     }
   },
   "patternProperties": {
@@ -1661,6 +1698,30 @@
         }
       },
       "additionalProperties": false
+    },
+    "X-Status": {
+      "type": "string",
+      "description": "Статус внедрения",
+      "enum": ["Implemented", "Planned", "InProgress", "TODO_MORE"]
+    },
+    "X-Actor": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/X-Status"
+        },
+        "cmdbMnemonic": {
+          "type": "string",
+          "description": "Мнемоника проекта в системе CMDB"
+        }
+      }
     }
   }
 }

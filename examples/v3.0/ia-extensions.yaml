@@ -1,0 +1,41 @@
+openapi: "3.0.0"
+x-agreementVersion: 1.0.0 #менять при изменении любых секций
+x-namespace: ru.company.
+x-status: Implemented
+x-interactionType: API
+#x-apiSpecification: Ссылка на спецификацию API (если тип взаимодействия по API) #<<< не нужен, данный файл со временем начнёт содержать спецификацию API
+x-consumptionType: Sync
+x-loadProfile: https://confluence.veon.com/display/HERMES/EDR+database+DFD#EDRdatabaseDFD-Операциисданными #Ссылка на профиль нагрузки
+x-providers:
+  - name: provider1
+    description: provider1
+    status: Planned
+    cmdbMnemonic: CMDP1
+  - name: provider2
+    description: provider2
+    status: InProgress
+    cmdbMnemonic: CMDP2
+x-consumers:
+  - name: consumer1
+    description: consumer1
+    status: Planned
+    cmdbMnemonic: CMDC1
+  - name: consumer2
+    description: consumer2
+    status: Implemented
+    cmdbMnemonic: CMDC2
+info:
+  version: 1.0.0 #interfaceVersion, менять с изменением секций paths/components
+  title: Example Interface
+  description: Example Interface Agreement
+paths:
+  /method1:
+    get:
+      operationId: method1 #name
+      description: Метод получения ....
+      x-status: Статус внедрения
+      parameters: []
+      responses:
+        default: {description: TODO}
+components:
+  schemas: {}
